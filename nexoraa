@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA | AI-Powered Academic Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand-wrapper">
+    <div class="logo-icon">✦</div>
+    <div>
+      <div class="logo-text">NEXORA <span class="logo-ai-badge">AI 4.0</span></div>
+      <div class="logo-sub">Intelligent Academic & Success Platform</div>
+    </div>
+  </div>
+
+  <div class="header-center">
+    <div class="role-switcher">
+      <button class="role-btn active" id="roleBtnStudent" onclick="switchRole('student')">🎓 Student Hub</button>
+      <button class="role-btn" id="roleBtnFaculty" onclick="switchRole('faculty')">👨‍🏫 Faculty Portal</button>
+    </div>
+  </div>
+
+  <div class="header-actions-right">
+    <div class="header-search">
+      <span>🔍</span>
+      <input id="searchRollInput" type="text" placeholder="Roll No..." onkeydown="if(event.key==='Enter') searchStudent()">
+      <button onclick="searchStudent()">Search</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <span class="nav-label">Academic Records</span>
+    <button class="active" onclick="showSection('dashboard', this)"><span>⌂</span> Dashboard</button>
+    <button onclick="showSection('profile', this)"><span>♙</span> My Profile</button>
+    <button onclick="showSection('attendance', this)"><span>▦</span> Attendance</button>
+    <button onclick="showSection('results', this)"><span>▤</span> Semester Results</button>
+    <button onclick="showSection('timetable', this)"><span>◷</span> Daily Schedule</button>
+    <button onclick="showSection('idcard', this)"><span>▣</span> College ID</button>
+  </nav>
+
+  <main>
+    <div id="studentContextBar" class="panel">
+      <span>👤 Current student: <b id="contextStudentName">Saijeevana</b> · Roll No: <b id="contextStudentRoll">107</b></span>
+    </div>
+
+    <section id="dashboard" class="section active">
+      <p class="muted">STUDENT OVERVIEW / 2026–27</p>
+      <h1 id="welcomeText">Welcome, Saijeevana! 👋</h1>
+
+      <div class="cards">
+        <div class="card">
+          <p class="card-label">Attendance</p>
+          <div class="stat" id="dashAttendanceStat">67%</div>
+          <div class="progress"><div style="width: 67%"></div></div>
+        </div>
+
+        <div class="card">
+          <p class="card-label">Roll Number</p>
+          <div class="stat blue" id="dashRollNo">107</div>
+        </div>
+
+        <div class="card">
+          <p class="card-label">Average Marks</p>
+          <div class="stat purple" id="dashAvgMarks">74.5%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- profile section -->
+    <section id="profile" class="section">
+      <h1>My Profile</h1>
+      <div class="panel">
+        <h2 id="profileName">Saijeevana</h2>
+        <p class="muted" id="profileMeta">Student • CSE • Roll No. 107</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- JS script link -->
+<script src="script.js"></script>
+</body>
+</html>
